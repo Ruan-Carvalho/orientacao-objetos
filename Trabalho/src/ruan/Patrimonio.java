@@ -6,12 +6,12 @@ import java.util.Date;
 
     public abstract class Patrimonio{
 	    protected float valor;
-	    protected float numPatrimonio;
+	    protected String numPatrimonio;
 	    protected Date dataAquisicao;
 	
 	
 	//Construtor Patrimonio
-	public Patrimonio(float valor, float numPatrimonio, Date dataAquisicao){
+	public Patrimonio(float valor, String numPatrimonio, Date dataAquisicao){
 	    this.valor = valor;
 	    this.numPatrimonio = numPatrimonio;
 		this.dataAquisicao = dataAquisicao;
@@ -23,7 +23,7 @@ import java.util.Date;
 	    return valor;
 	}
 	
-	public float getNumPatrimonio(){
+	public String getNumPatrimonio(){
 	    return numPatrimonio;
 	}
 	
@@ -37,7 +37,7 @@ import java.util.Date;
 	    this.valor = valor;
 	}
 	
-	public void setNumPatrimonio(float numPatrimonio){
+	public void setNumPatrimonio(String numPatrimonio){
 	    this.numPatrimonio = numPatrimonio;
 	}
 	

@@ -1,19 +1,22 @@
 package ruan;
 
+import java.util.ArrayList;
 
-public class Fornecedor{
+public class Proprietario{
         private String nome;
         private int idade;
         private String cpf;
         private String email;
+        private ArrayList<Patrimonio> listaPatrimonio;
     
     
-    //Construtor Fornecedor
-    public Fornecedor(String nome, int idade, String cpf, String email){
+    //Construtor proprietario
+    public Proprietario(String nome, int idade, String cpf, String email){
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
         this.email = email;
+        listaPatrimonio = new ArrayList<Patrimonio>();
     }
  
 
@@ -34,7 +37,11 @@ public class Fornecedor{
         return email;
     }
     
-    //Sets Fornecedor
+    public ArrayList<Patrimonio> getlistaPatrimonio() {
+		return listaPatrimonio;
+	}
+    
+    //Sets proprietario
     public void setNome(String nome){
         this.nome = nome;
     }
@@ -51,8 +58,24 @@ public class Fornecedor{
         this.email = email;
     }
     
-    // toString Fornecedor
+    public void setlistaPatrimonio(ArrayList<Patrimonio> lista){
+		listaPatrimonio = lista;
+	}
+    
+ // Métodos.
+ 	public boolean addPatrimonio(Patrimonio patrimonio) {
+ 		return listaPatrimonio.add(patrimonio);
+ 	}
+ 	
+ 	public boolean deletarPatrimonio(Patrimonio patrimonio) {
+ 		return listaPatrimonio.remove(patrimonio);
+ 	}
+    
+ 	
+    
+    // toString proprietario
 	public String toString() {
 		return "Nome: " + nome + ", Idade: " + idade + " CPF: " + cpf + " E-mail: " + email;
 	}
 }
+
