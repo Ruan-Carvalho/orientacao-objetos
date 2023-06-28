@@ -1,23 +1,24 @@
 package ruan;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
     public abstract class Patrimonio{
+    	protected String nome;
 	    protected float valor;
 	    protected String numPatrimonio;
-	    protected Date dataAquisicao;
+	    protected String dataAquisicao;
 	
 	
 	//Construtor Patrimonio
-	public Patrimonio(float valor, String numPatrimonio, Date dataAquisicao){
-	    this.valor = valor;
+	public Patrimonio(String nome, float valor, String numPatrimonio, String dataAquisicao){
+	    this.nome = nome;
+		this.valor = valor;
 	    this.numPatrimonio = numPatrimonio;
 		this.dataAquisicao = dataAquisicao;
 	}
 	
 	//Gets Patrimonio
+	public String getNome(){
+	    return nome;
+	}
 	
 	public float getValor(){
 	    return valor;
@@ -27,11 +28,15 @@ import java.util.Date;
 	    return numPatrimonio;
 	}
 	
-	public Date getDataAquisicao(){
+	public String getDataAquisicao(){
 	    return dataAquisicao;
 	}
 	
 	//Sets Patrimonio
+	
+	public void setNome(String nome){
+	    this.nome = nome;
+	}
 	
 	public void setValor(float valor){
 	    this.valor = valor;
@@ -41,15 +46,7 @@ import java.util.Date;
 	    this.numPatrimonio = numPatrimonio;
 	}
 	
-	public void setDataAquisicao(Date dataAq){
+	public void setDataAquisicao(String dataAq){
 	    dataAquisicao = dataAq;
-	}
-	
-	
-	// toString Patrimônio
-	public String toString() {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy");
-		
-		return "Valor: " + valor + ", Número de Patrimônio: " + numPatrimonio + " Data de aquisição: " + formato.format(dataAquisicao);
 	}
 }

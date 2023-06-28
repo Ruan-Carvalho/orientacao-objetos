@@ -1,29 +1,20 @@
 package ruan;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
     public class Investimento extends Patrimonio{
-	    private String tipoInvst;
 	    private String instituicao;
 	    private float valorInicial;
 	    private float rentabilidade;
 	
 	
 	//Construtor Investimento
-	public Investimento(float valor, String numPatrimonio, Date dataAquisicao, String tipoInvst, String instituicao, float valorInicial, float rentabilidade){
-	    super(valor, numPatrimonio, dataAquisicao);
-	    this.tipoInvst = tipoInvst;
+	public Investimento(String nome, float valor, String numPatrimonio, String dataAquisicao, String instituicao, float valorInicial, float rentabilidade){
+	    super(nome, valor, numPatrimonio, dataAquisicao);
 	    this.instituicao = instituicao;
 	    this.valorInicial = valorInicial;
 	    this.rentabilidade = rentabilidade;
 	}
 	
 	//Gets Investimento
-	public String getTipoInvst(){
-	    return tipoInvst;
-	}
 	
 	public String getInstituicao(){
 	    return instituicao;
@@ -38,9 +29,6 @@ import java.util.Date;
 	}
 
     //Sets Investimento
-    public void setTipoInvst(String tipoInvst){
-	    this.tipoInvst = tipoInvst;
-	}
 	
 	public void setInstituicao(String instituicao){
 	    this.instituicao = instituicao;
@@ -52,13 +40,5 @@ import java.util.Date;
 	
 	public void setRentabilidade(float rentabilidade){
 	    this.rentabilidade = rentabilidade;
-	}
-	
-	//ToString Investimento
-	public String toString() {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy");
-		
-		return "Valor: " + valor + ", Número de Patrimônio: " + numPatrimonio + " Data de aquisição: " + formato.format(dataAquisicao)
-		+ " Modalidade da aplicação: " + tipoInvst + " Instituição: " + instituicao + " Valor inicial investido: " + valorInicial + " Rentabilidade: " + rentabilidade;
 	}
 }
