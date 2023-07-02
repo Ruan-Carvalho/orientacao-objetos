@@ -3,6 +3,13 @@ package ruan;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+	/**
+	 * Classe Proprietário responsavel por armazenar os dados dos patrimônios.
+	 * @author Ruan Sobreira Carvalho
+	 * @since 2023
+	 * @version 1.0
+	 */
+
 public class Proprietario{
 		private static Proprietario usuario;
         private String nome;
@@ -11,8 +18,16 @@ public class Proprietario{
         private String email;
         private ArrayList<Patrimonio> listaPatrimonio;
     
-    
-    //Construtor proprietario
+     /**
+   	  * Construtor da classe Proprietario.
+   	  *
+   	  * @param nome      			 O nome do Proprietário.
+   	  * @param idade     			 A idade do Proprietário.
+   	  * @param cpf       			 O CPF do Proprietário.
+   	  * @param email                 O E-mail do Proprietário.
+   	  * @param ListaPatrimonio       A lista de patrimõnios do Proprietário.
+   	  */
+        
     public Proprietario(String nome, int idade, String cpf, String email){
         this.nome = nome;
         this.idade = idade;
@@ -21,14 +36,16 @@ public class Proprietario{
         listaPatrimonio = new ArrayList<Patrimonio>();
     }
     
+    
+    
     public static Proprietario getInstance() {
         if (usuario == null) {
-            usuario = new Proprietario("Ruan Carvalho", 20 ,"123.321.234-12","ruansobreira11@gmail.com");
+            usuario = new Proprietario("Ruan Carvalho",20,"123.231.321-12","ruansobreira11@gmail.com" );
         }
         return usuario;
     }
 
-	//Gets Fornecedor
+	//Gets Proprietario
     public String getNome(){
         return nome;
     }
@@ -44,12 +61,12 @@ public class Proprietario{
     public String getEmail(){
         return email;
     }
-    
+   
     //Sets proprietario
     public void setNome(String nome){
         this.nome = nome;
     }
-    
+   
     public void setIdade(int idade){
         this.idade = idade;
     }
@@ -66,6 +83,11 @@ public class Proprietario{
  // Métodos.
     
     
+    /**
+     * Void para adicionar patrimonios ao inicializar o programa.
+     * @throws ParseException
+     */
+    
     public void preencherDados() throws ParseException {
 
     	Patrimonio patrimonio_01 = new Automovel("Lancer EVO",155000.00f,"001.00.01","21/04/2024","Mitsubishi",2011,79000);
@@ -81,19 +103,42 @@ public class Proprietario{
 		return listaPatrimonio;
 	}
     
- 	public boolean addPatrimonio(Patrimonio novopatrimonio) {
- 		return this.listaPatrimonio.add(novopatrimonio);
- 	}
-    
     public void setlistaPatrimonio(int index, Patrimonio novopatrimonio){
 		this.listaPatrimonio.set(index, novopatrimonio);
 	}
+    
+    /**
+	 * Metodo responsavel por adicionar os dados
+	 * no ArrayList ListaPatimonio.
+	 * Retorna booleano de acordo com o resultado
+	 * dessa acao.
+	 * @return boolean
+	 */
+    
+    public boolean addPatrimonio(Patrimonio novopatrimonio) {
+ 		return this.listaPatrimonio.add(novopatrimonio);
+ 	}
+    
+    /**
+	 * Metodo responsavel por deletar os dados
+	 * no ArrayList ListaPatrimonio.
+	 * Retorna booleano de acordo com o resultado
+	 * dessa acao.
+	 */
     
  	public boolean deletarPatrimonio(Patrimonio patrimonio) {
  		return listaPatrimonio.remove(patrimonio);
  	}
  	
- 	public int buscaproduto(String pesquisa) {
+ 	/**
+	 * Metodo responsavel por remover os dados
+	 * no ArrayList ListaPatrimonioww.
+	 * Retorna booleano de acordo com o resultado
+	 * dessa acao.
+	 * @return boolean
+	 */
+ 	
+ 	public int buscaPatrimonio(String pesquisa) {
 		for (int i = 0; i < listaPatrimonio.size(); i++) {
 	        if (listaPatrimonio.get(i).getNome().equals(pesquisa)) {
 	            return i;

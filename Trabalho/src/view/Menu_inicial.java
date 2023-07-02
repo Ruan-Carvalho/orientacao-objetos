@@ -3,7 +3,14 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import ruan.*;
+
+	/**
+	 * Tela inicial do programa que redireciona
+	 * para as telas de adição e consulta.
+	 * @author Ruan Sobreira Carvalho
+	 * @since 2023
+	 * @version 1.0
+	 */
 
 public class Menu_inicial implements ActionListener {
 	
@@ -27,7 +34,8 @@ public class Menu_inicial implements ActionListener {
 		janela.setSize(400, 400);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setVisible(true);
-	}
+		
+		}
 	
 	public static void main(String[] args) {
 		Menu_inicial menu = new Menu_inicial();

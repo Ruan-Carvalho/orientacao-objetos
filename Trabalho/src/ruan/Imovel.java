@@ -1,16 +1,33 @@
 package ruan;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+	/**
+ 	* A classe Imóvel representa uma categoria de patrimônio que herda características
+ 	* da classe Ppatrimônio. Ela adiciona informações específicas para imóveis,
+ 	* como cidade, estado, endereco, e CEP. 
+ 	* @author Ruan Sobreira Carvalho
+ 	* @since 2023
+ 	* @version 1.0
+ 	*/
+	
     public class Imovel extends Patrimonio{
 	    private String cidade;
 	    private String estado;
 	    private String endereco;
 	    private String cep;
 	
-	//Construtor Imóvel
+	    /**
+		 * Construtor da classe imóvel.
+		 *
+		 * @param nome              O nome do Imóvel.
+		 * @param valor             O valor do Imóvel.
+		 * @param numpatrimonio     O número do Imóvel.
+		 * @param dataAquisicao     A data de aquisição do Imóvel.
+		 * @param cidade   		    A cidade do Imóvel.
+		 * @param estado			O estado do Imóvel.
+		 * @param endereco         	O endereço do Imóvel.
+		 * @param cep				O CEP do imóvel.
+		 */
+	    
 	public Imovel(String nome ,float valor, String numPatrimonio, String dataAquisicao, String cidade, String estado,String endereco, String cep){
 	    super(nome, valor, numPatrimonio, dataAquisicao);
 	    this.cidade = cidade;
@@ -53,10 +70,4 @@ import java.util.Date;
 	    this.cep = cep;
 	}
 	
-	//ToString Imóvel
-	public String toString() {
-		
-		return "Valor: " + valor + ", Número de Patrimônio: " + numPatrimonio + " Data de aquisição: " + dataAquisicao
-		+ " Cidade: " + cidade + " Estado: " + estado + " Endereço: " + endereco + " CEP: " + cep + " Tipo de Imóvel: " + nome;
-	}
 }
